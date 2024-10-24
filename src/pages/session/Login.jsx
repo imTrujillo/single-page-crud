@@ -7,6 +7,8 @@ import Swal from 'sweetalert2'
 import { json, Link } from 'react-router-dom'
 import "../../App.css"
 
+import loginImage from '../../../public/login.jpg';
+
 export default function Login() {
     const {register , handleSubmit, formState: {errors}} = useForm()
 
@@ -54,7 +56,7 @@ export default function Login() {
   return (
     <div className='d-flex p-5 align-items-center justify-content-center align-items-stretch'>
         
-        <img className='img-fluid w-50' src="../public/login.jpg" alt="" />
+        <img className='img-fluid w-50' src={loginImage} alt="Login" />
         
         <div className=' card text-white bg-dark p-5 text-center align-items-center h-4'>
         <h1>Bienvenido!</h1>

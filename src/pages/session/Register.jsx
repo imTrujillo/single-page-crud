@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom'
 import {auth_user} from '../../firebase/appConfig'
 import Swal from 'sweetalert2'
 
+import registerImage from '../../../public/register.jpg';
+
 //crear un esquema (reglas) para validar password
 const schema = yup.object().shape({
     //ASIGNAR REGLAS A VALIDAR
@@ -41,7 +43,7 @@ const registerForm = (data) =>{
   return (
     <div className='d-md-flex p-5 align-items-center justify-content-center align-items-stretch flex-md-row text-center' >
         
-            <img className='w-50 ' src="../public/register.jpg" alt=""  />
+        <img className='w-50' src={registerImage} alt="Register" />
         
         <div className='d-flex p-5 align-items-center justify-content-center flex-column login-height card text-white bg-dark text-center align-items-center'>
         <h1>Registrar Usuario</h1>
