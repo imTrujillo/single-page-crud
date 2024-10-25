@@ -7,6 +7,9 @@ import {BrowserRouter, Link, Route, Routes} from 'react-router-dom'
 import Register from './session/Register'
 import { auth_user } from '../firebase/appConfig'
 
+import userPhoto from '../../public/user.jpg';
+import logoApp from '../../public/logoApp.jpg'
+
 export default function Home() {
     //estado donde verificamos si el usuario esta autenticado
     const [user, setUser] = useState(null)
@@ -46,7 +49,7 @@ export default function Home() {
         <div className='text-center'>
         <nav className="navbar w-100 navbar-expand text-white bg-dark justify-content-between px-5 py-3 d-md-flex flex-column flex-md-row">
             <div className="d-flex gap-4">
-                <img className='logo img-fluid' src="https://protoinfrastack-myfirstbucketb8884501-fnnzvxt2ee5v.s3.amazonaws.com/cuyl3c8Oq9bP2BrE0xv5ylOc5TbUtrPwPoGJ.png"  />
+                <img className='logo img-fluid' src={logoApp}  />
                 <h1>Digital Store</h1>
             </div>
         
@@ -55,10 +58,10 @@ export default function Home() {
         <div className=' p-5 gap-5 d-md-flex flex-column flex-md-row'>
             <div>
             <h3 className='body text-white'>Bienvenido ¿Qué tal tu día?</h3>
-            <img className='rounded-4 my-3' src={userStorage.photoURL ? userStorage.photoURL : "https://cdn-icons-png.flaticon.com/512/4123/4123763.png"} alt=""  style={{width:"150px"}}/>
+            <img className='rounded-4 my-3' src={userStorage.photoURL || userPhoto} alt=""  style={{width:"150px"}}/>
             </div>
         <div className='cardcard text-white bg-secondary mb-3 p-4 rounded-4'>
-        <p>Usuario: {userStorage.displayName ? userStorage.displayName : "Invitado"}</p>
+        <p>Usuario: {userStorage.displayName || "Invitado"}</p>
         <p>Correo: {userStorage.email}</p>
         <button className='btn btn-danger p-3 rounded-5' onClick={logout}>Cerrar Sesión</button>
         </div>
